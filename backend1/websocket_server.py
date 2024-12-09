@@ -39,4 +39,6 @@ class WebsocketFunction(WebSocket):
 
 
 server = WebSocketServer('', 8765, WebsocketFunction)
+host, port = server.serversocket.getsockname()
+print(f"Server is running on {host}:{port}")
 server.serve_forever()
