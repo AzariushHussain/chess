@@ -38,7 +38,7 @@ class WebsocketFunction(WebSocket):
         print(self.address, 'closed')
 
 
-server = WebSocketServer('', 8765, WebsocketFunction)
+server = WebSocketServer('0.0.0.0', 8765, WebsocketFunction)
 host, port = server.serversocket.getsockname()
 print(f"Server is running on {host}:{port}")
 server.serve_forever()
